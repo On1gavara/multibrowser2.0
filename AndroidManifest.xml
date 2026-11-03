@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Манифест — "паспорт" приложения: какие разрешения нужны и какие экраны есть.
+     Лежит по пути app/src/main/AndroidManifest.xml -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Разрешение выходить в интернет. Без него WebView ничего не загрузит. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:label="MultiBrowser"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <!-- Единственный экран приложения. -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <!-- Этот блок делает экран стартовым: он появится по иконке в меню телефона. -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
